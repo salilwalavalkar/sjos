@@ -4,7 +4,7 @@
 {{ $logo_mode := .Scratch.Get "logo_mode" }}
 {{ $logo_description := .Scratch.Get "logo_description" }}
 
-<a class="logo" href="{{ `/`| relLangURL }}">
+<a class="logo" href="{{ .Site.Home.RelPermalink }}">
    {{ if $.Site.Params.logo }}
    <img src="{{ if eq $logo_mode "dark" }}{{ $.Site.Params.logo_dark | relURL }}{{ else }}{{ $.Site.Params.logo | relURL }}{{ end }}" alt="{{ .Site.Params.site_name }}"{{ with $logo_h }} width="{{ math.Round (mul (float .) (div 628.0 182.0)) }}" height="{{ . }}"{{ end }}>
    {{ if $logo_description }}

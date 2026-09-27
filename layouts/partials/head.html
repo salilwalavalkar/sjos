@@ -1,4 +1,8 @@
 <head>
+  {{- if eq .Kind "404" }}
+  {{- /* GitHub Pages serves 404.html at whatever URL was requested, so resolve the page's relative links from the site root */}}
+  <base href="{{ .Site.BaseURL }}">
+  {{- end }}
   {{ partial "_seo.html" . }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 

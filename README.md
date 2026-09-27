@@ -19,3 +19,10 @@ hugo --minify          # production build into ./public
 | Styles | `assets/scss/` (colours and fonts in `vars.sass`) |
 | Images, favicons, fonts | `static/` |
 | Planning notes, brand source files | `docs/` |
+
+## Deployment
+
+Every push to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/hugo.yml`); it can also be run by hand from the **Actions** tab.
+
+- Live URL: https://salilwalavalkar.github.io/sjos/
+- To move to `www.sjos.ie`: add the domain under **Settings → Pages → Custom domain**, then point the `www` DNS record (currently Squarespace) to `salilwalavalkar.github.io` with a CNAME record. The workflow picks up the new address automatically.
