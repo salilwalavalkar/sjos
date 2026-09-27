@@ -1,0 +1,96 @@
+---
+hero:
+  enable: true
+  title: "SJOS Property Maintenance"
+  suptitle: "Your property, looked after properly."
+  btns:
+    - label: Call
+      icon: tel
+      url: "tel:+353861747745"
+      title: "Call 086 174 77 45"
+      class: btn
+    - label: Text
+      icon: sms
+      url: "sms:+353861747745"
+      title: "Text 086 174 77 45"
+      class: btn-bd
+    - label: WhatsApp
+      icon: wa
+      url: "https://wa.me/353861747745"
+      title: "WhatsApp 086 174 77 45"
+      class: btn-bd
+      external: true
+  text_3: "Irish, family-owned and trusted for over <b>10 years</b>, we look after residential and commercial properties with reliable, cost-effective maintenance."
+  text_4:  Send a request now!
+
+
+section_about:
+  suptitle: "\\ about us \\"
+  title: A Local Irish Family Business You Can Rely On
+  subtitle: Looking after Irish homes and businesses for over 10 years.
+  heading: Proper Work, Fair Prices, No Fuss
+  desc: |
+    SJOS is an Irish family business that takes pride in getting the job done right. For over a decade we've been looking after homes, rentals and commercial premises, from rewiring a kitchen and fixing a leaking pipe to repainting after a damp winter and fitting security lights for the dark evenings.
+
+    We know Irish properties: older houses with tired wiring, pipes that suffer in a cold snap, and paintwork that takes a beating from the weather. Whether you're a homeowner, a landlord or looking after a commercial building, we'll tell you straight what's needed and get it done as cost-effectively as we possibly can.
+  cta: "Need something fixed? [Call](tel:+353861747745) or [WhatsApp](https://wa.me/353861747745) us on **086 174 77 45**."
+  services_title: What we do
+  services:
+    - name: Electrical
+      icon: i-bolt
+    - name: EV Charger Installs
+      icon: i-ev
+    - name: Plumbing
+      icon: i-drop
+    - name: Painting
+      icon: i-roller
+    - name: Carpentry
+      icon: i-hammer
+    - name: Security & Smart Lighting
+      icon: i-bulb
+    - name: Preventive & Reactive Maintenance
+      icon: i-wrench
+    - name: Project Management
+      icon: i-clipboard
+  stat:
+    - val: "10 **+**"
+      title: "Years in the trade"
+    - val: "8"
+      title: "Services under one roof"
+    - val: "100 **%**"
+      title: "Irish & family-owned"
+    - val: "1"
+      title: "Call to get it sorted"
+
+section_features:
+  img: './images/img2.webp'
+  suptitle: "\\ why sjos \\"
+  title: One Team for Your Whole Property
+  subtitle: We look after your property like it's our own.
+  desc: SJOS Property Maintenance is an Irish, family-owned business with over 10 years in the trade. From electrical and plumbing to painting, carpentry and security lighting, we take care of planned and reactive maintenance for residential and commercial properties, giving you the service you expect as cost-effectively as we possibly can.
+  list:
+    - item: We listen to what you actually need
+    - item: Clear communication from first call to finished job
+    - item: One team for electrical, plumbing, painting and carpentry
+    - item: Preventive maintenance that stops small problems becoming big ones
+    - item: Reactive repairs when something goes wrong
+    - item: Honest, cost-effective pricing
+    - item: Project management from start to finish
+
+section_features_gallery:
+  suptitle: "\\ who we work for \\"
+  title: Maintenance for Every Kind of Property
+  cta: "Whatever kind of property you look after, [call](tel:+353861747745) or [WhatsApp](https://wa.me/353861747745) us today on **086 174 77 45**."
+  gallery:
+    - title: Homeowners
+      desc: From a dripping tap to a full repaint, we keep your home safe, comfortable and in good repair.
+      icon: i-home
+    - title: Landlords & Rentals
+      desc: Dependable repairs when tenants need them and quick turnarounds between tenancies, so your rental stays in good shape.
+      icon: i-key
+    - title: Shops & Offices
+      desc: Electrical, plumbing and decorating work carried out with minimal disruption, so your business keeps running.
+      icon: i-shop
+    - title: Property Managers
+      desc: Planned preventive maintenance, reactive call-outs and full project management for larger jobs across your buildings.
+      icon: i-building

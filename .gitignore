@@ -1,0 +1,12 @@
+# Hugo build output and cache
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# editor / OS
+.idea/
+.vscode/
+.DS_Store
+
+# local planning notes and design brief (kept out of git)
+/docs/first-time-setup/

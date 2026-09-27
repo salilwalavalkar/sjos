@@ -1,0 +1,11 @@
+<!-- BEGIN soc -->
+<div class="soc">
+    {{- range site.Params.soc }}
+    <a href="{{ .link }}" title="{{ .title }}" target="_blank" rel="noopener">
+        <svg class="icon" width="24" height="24">
+            <use xlink:href="#{{ .icon }}"></use>
+        </svg>
+    </a>
+    {{- end }}
+</div>
+<!-- END soc -->

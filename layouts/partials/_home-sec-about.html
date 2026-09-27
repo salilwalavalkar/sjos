@@ -1,0 +1,61 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.homepage.section_about }}
+{{ with $data.homepage.section_about }}
+<section class="section section--about" id="about">
+    <div class="container">
+
+        <div class="row row--1">
+            <div>
+                <hgroup>
+                    <p class="subtitle">{{ .suptitle }}</p>
+                    <h2 class="h2">{{ .title }}</h2>
+                    <p class="lead">{{ .subtitle }}</p>
+                </hgroup>
+            </div>
+            <div>
+                <h3 class="h3">{{ .heading }}</h3>
+                <div>
+                    {{ .desc | markdownify }}
+                </div>
+                {{- $servicesTitle := .services_title }}
+                {{- with .services }}
+                <div class="chips">
+                    {{ with $servicesTitle }}<p class="chips__title">{{ . }}</p>{{ end }}
+                    <ul class="chips__list">
+                        {{- range . }}
+                        <li class="chip">
+                            <svg class="chip__icon" width="18" height="18" aria-hidden="true">
+                                <use xlink:href="#{{ .icon }}"></use>
+                            </svg>
+                            {{ .name }}
+                        </li>
+                        {{- end }}
+                    </ul>
+                </div>
+                {{- end }}
+            </div>
+        </div>
+
+        <div class="stats">
+            {{ range .stat }}
+            <div class="stat">
+                <div class="stat__val">
+                    {{ .val | markdownify }}
+                </div>
+                <div class="stat__title">
+                    {{ .title }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        {{- with .cta }}
+        <p class="section-cta">{{ . | markdownify }}</p>
+        {{- end }}
+
+
+    </div>
+</section>
+{{ end }}
+{{ end }}

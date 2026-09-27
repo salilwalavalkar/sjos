@@ -1,0 +1,32 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.homepage.section_features_gallery }}
+{{ with $data.homepage.section_features_gallery }}
+<section class="section section--features-gallery" id="who-we-work-for">
+    <div class="container">
+        {{- if or .suptitle .title }}
+        <hgroup class="serve__head">
+            {{ with .suptitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+            {{ with .title }}<h2 class="h2">{{ . }}</h2>{{ end }}
+        </hgroup>
+        {{- end }}
+
+        <div class="serve">
+            {{ range .gallery }}
+            <article class="serve__card">
+                <svg class="serve__icon" width="56" height="56" aria-hidden="true">
+                    <use xlink:href="#{{ .icon }}"></use>
+                </svg>
+                <h3 class="serve__title">{{ .title }}</h3>
+                <p class="serve__desc">{{ .desc }}</p>
+            </article>
+            {{ end }}
+        </div>
+
+        {{- with .cta }}
+        <p class="section-cta">{{ . | markdownify }}</p>
+        {{- end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

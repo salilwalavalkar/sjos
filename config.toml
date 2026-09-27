@@ -1,0 +1,115 @@
+baseURL = "https://www.sjos.ie/"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+paginate = "6"
+relativeURLs = true
+summaryLength = "50"
+title = "Electrical, Plumbing & Repairs"
+
+# taxonomy pages (/categories/, /tags/) aren't used
+disableKinds = ["taxonomy", "term"]
+
+[Languages.en]
+contentDir = "content/en"
+home = "Home"
+languageCode = "en-IE"
+languageName = "ENG"
+weight = 1
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[sitemap]
+ChangeFreq = "monthly"
+Priority = 0.5
+
+[params]
+author = "SJOS Property Maintenance"
+description = "Irish, family-owned property maintenance for homes and businesses: electrical, plumbing, painting, carpentry and more. Over 10 years in the trade."
+logo = "./images/brand/sjos-logo-white.png"
+logo_dark = "./images/brand/sjos-logo-white.png"
+logo_description = "SJOS Property Maintenance"
+site_name = "SJOS Property Maintenance"
+og_image = "images/og-image.jpg"
+
+[params.preloader]
+enable = true
+preloader = ""
+
+############################# socials #################################
+# soc
+[[params.soc]]
+icon = "fb"
+link = "https://www.facebook.com/SJOSPropertyMaintenance"
+title = "facebook"
+
+[[params.soc]]
+icon = "gg"
+link = "https://www.google.com/search?q=sjos%20property%20maintenance%20.ie"
+title = "google"
+
+############################# contacts #################################
+[[params.contacts]]
+icon = "tel"
+link = "tel:+353861747745"
+title = "086 174 77 45"
+
+[[params.contacts]]
+icon = "msg"
+link = "mailto:info@sjos.ie"
+title = "info@sjos.ie"
+
+[[params.contacts]]
+icon = "wa"
+link = "https://wa.me/353861747745"
+title = "WhatsApp us"
+
+[[params.contacts]]
+icon = "sms"
+link = "sms:+353861747745"
+title = "Send a text"
+
+############################# footer #################################
+[params.footer]
+tagline = "Your property, looked after properly."
+credit_name = "The Balance Spot"
+credit_url = "https://thebalancespot.co/"
+note = "Irish, family-owned property maintenance for homes and businesses. Electrical, plumbing, painting, carpentry and more, with over 10 years in the trade."
+
+[[menu.footer]]
+hasChildren = true
+name = "Navigation"
+weight = 1
+
+[[menu.footer]]
+URL = "#about"
+name = "About Us"
+parent = "Navigation"
+weight = 1
+
+[[menu.footer]]
+URL = "#why-sjos"
+name = "Why SJOS"
+parent = "Navigation"
+weight = 2
+
+[[menu.footer]]
+URL = "#who-we-work-for"
+name = "Who We Work For"
+parent = "Navigation"
+weight = 3
+
+[[menu.header]]
+URL = "#about"
+name = "About Us"
+weight = 1
+
+[[menu.header]]
+URL = "#why-sjos"
+name = "Why SJOS"
+weight = 2
+
+[[menu.header]]
+URL = "#who-we-work-for"
+name = "Who We Work For"
+weight = 3
