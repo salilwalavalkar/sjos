@@ -1,4 +1,4 @@
-baseURL = "https://www.sjos.ie/"
+baseURL = "https://sjos.ie/"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 paginate = "6"

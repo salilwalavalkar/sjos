@@ -1,6 +1,6 @@
 # SJOS Property Maintenance website
 
-One-page website for [SJOS Property Maintenance](https://www.sjos.ie/), built with [Hugo](https://gohugo.io/) (extended) and deployed to GitHub Pages.
+One-page website for [SJOS Property Maintenance](https://sjos.ie/), built with [Hugo](https://gohugo.io/) (extended) and deployed to GitHub Pages.
 
 ## Run locally
 
@@ -24,5 +24,6 @@ hugo --minify          # production build into ./public
 
 Every push to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/hugo.yml`); it can also be run by hand from the **Actions** tab.
 
-- Live URL: https://salilwalavalkar.github.io/sjos/
-- To move to `www.sjos.ie`: add the domain under **Settings → Pages → Custom domain**, then point the `www` DNS record (currently Squarespace) to `salilwalavalkar.github.io` with a CNAME record. The workflow picks up the new address automatically.
+- Live URL: https://sjos.ie/ (custom domain set under **Settings → Pages**; `www.sjos.ie` and `salilwalavalkar.github.io/sjos/` redirect to it)
+- DNS is at Blacknight: `sjos.ie` has A/AAAA records for GitHub Pages (185.199.108–111.153, 2606:50c0:8000–8003::153) and `www` is a CNAME to `salilwalavalkar.github.io`. Keep the Titan email records (MX, SPF TXT, `mail`).
+- Once GitHub has issued the certificate, tick **Enforce HTTPS** and re-run the workflow so the site's canonical URLs become `https://sjos.ie/`.
