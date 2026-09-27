@@ -1,0 +1,22 @@
+<head>
+  {{- if eq .Kind "404" }}
+  {{- /* GitHub Pages serves 404.html at whatever URL was requested, so resolve the page's relative links from the site root */}}
+  <base href="{{ .Site.BaseURL }}">
+  {{- end }}
+  {{ partial "_seo.html" . }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+  {{ "<!-- Main Stylesheet -->" | safeHTML }}
+  {{ $main := resources.Get "scss/main.sass" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $main.Permalink | relURL }}?v={{ now.Format " 01-02-2006-14-52-26"}}" media="screen">
+  {{ " <!-- plugins --> " | safeHTML }}
+  {{ range .Site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | relURL }}?v={{ now.Format " 01-02-2006-14-52-26"}}">
+  {{ end }}
+  {{ "<!-- Custom Stylesheet -->" | safeHTML }}
+  {{ $custom := resources.Get "scss/custom.scss" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $custom.Permalink | relURL }}?v={{ now.Format " 01-02-2006-14-52-26"}}"
+    media="screen">
+
+  <link rel="preload" href="{{ `fonts/manrope/manrope-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin>
+</head>

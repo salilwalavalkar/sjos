@@ -1,0 +1,46 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.homepage.hero }}
+{{ with $data.homepage.hero }}
+<section class="section section--hero">
+    <div class="hero container">
+        <div class="hero__container">
+            <div class="hero__row">
+                <div class="hero__col">
+                    <hgroup>
+                        <p class="subtitle">{{ .suptitle }}</p>
+                        <h1 class="h1">{{ .title | markdownify }}</h1>
+                    </hgroup>
+
+                    <div class="hero__btns">
+                        {{- range .btns }}
+                        <a href="{{ .url | safeURL }}" class="{{ .class }}" title="{{ .title }}" aria-label="{{ .title }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
+                            {{- with .icon }}
+                            <svg class="icon" width="20" height="20" aria-hidden="true">
+                                <use xlink:href="#{{ . }}"></use>
+                            </svg>
+                            {{- end }}
+                            <b><span>{{ .label }}</span><span>{{ .label }}</span></b>
+                        </a>
+                        {{- end }}
+                    </div>
+                </div>
+            </div>
+            <div class="hero__row">
+                <div class="hero__col">
+                    <p>{{ .text_3 | safeHTML }}</p>
+                    <p class="text--main">
+                        <b>
+                            {{ .text_4 }}
+                        </b>
+                    </p>
+                    <div class="hero__soc">
+                        {{- partial "_soc.html" . -}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

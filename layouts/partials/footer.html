@@ -1,0 +1,74 @@
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer__top">
+        <div class="container">
+
+            <div class="footer__col">
+                {{ .Scratch.Set "logo_h" "56" }}
+                {{ .Scratch.Set "logo_w" "193" }}
+                {{- partial "_logo.html" . -}}
+                {{- with .Site.Params.footer.tagline }}
+                <p class="footer__tagline">{{ . }}</p>
+                {{- end }}
+                <div class="footer__note">
+                    {{ .Site.Params.footer.note }}
+                </div>
+                <div class="footer__soc">
+                    {{- partial "_soc.html" . -}}
+                </div>
+            </div>
+            <div class="footer__col">
+                <nav class="footer__nav">
+                    {{ range .Site.Menus.footer }}
+                    <div>
+                        <span class="footer__nav-title">
+                            {{ .Name }}
+                        </span>
+                        <hr class="footer__divider">
+
+                        {{ if .Children }}
+                        <ul class="footer__nav-sub">
+                            {{ range .Children }}
+                            <li>
+                                {{- if .URL }}
+                                <a href="{{ if hasPrefix .URL "#" }}{{ .URL }}{{ else }}{{ .URL | relURL }}{{ end }}" target="_self">{{ .Name }}</a>
+                                {{- else }}
+                                <span>{{ .Name }}</span>
+                                {{- end }}
+                            </li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </nav>
+            </div>
+            <div class="footer__col">
+                <div class="contacts">
+                    {{ range .Site.Params.contacts }}
+                    <a href="{{ .link | safeURL }}" class="contact"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>
+                        <svg class="icon" width="24" height="24">
+                            <use xlink:href="#{{ .icon }}"></use>
+                        </svg>
+                        <span>
+                            {{ .title | safeHTML }}
+                        </span>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__btm">
+        <div class="container">
+            <p>&copy; {{ now.Year }} {{ .Site.Params.site_name }}. All rights reserved.</p>
+            {{- with .Site.Params.footer.credit_name }}
+            <p class="footer__credit">
+                Made with <span class="footer__heart" aria-label="love">&hearts;</span> by
+                <a href="{{ $.Site.Params.footer.credit_url }}" target="_blank" rel="noopener">{{ . }}</a>
+            </p>
+            {{- end }}
+        </div>
+    </div>
+</footer>
+<!--Main Footer-->
