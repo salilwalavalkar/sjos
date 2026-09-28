@@ -40,10 +40,10 @@ If an edit to a template under `layouts/` doesn't show up, restart `hugo server`
 ## URLs, previews and deployment
 
 - `config.toml` keeps **`relativeURLs = true`**: the owner previews `public/index.html` from a sub-folder (IDE preview), where root-relative URLs break. Do not change this.
-- Hugo's relative URLs break when the site is served from a sub-folder, so the GitHub Actions build (`.github/workflows/hugo.yml`, Hugo 0.166.0 extended, runs on push to `main` or manually) sets `HUGO_RELATIVEURLS=false` and uses `--baseURL` from `actions/configure-pages` (the custom domain once set).
+- Hugo's relative URLs break when the site is served from a sub-folder, so the GitHub Actions build (`.github/workflows/hugo.yml`, Hugo 0.166.0 extended, runs on push to `main` or manually) sets `HUGO_RELATIVEURLS=false` and uses `--baseURL` from `actions/configure-pages` (`https://sjos.ie/`).
 - Links to the home page must use `.Site.Home.RelPermalink` (not `"/" | relURL`) so they work under a sub-folder. Inline `style="background-image:url(...)"` is not rewritten by `relativeURLs`.
 - GitHub Pages serves `404.html` at any missing URL; `head.html` adds `<base href="{{ .Site.BaseURL }}">` on the 404 page so its assets resolve.
-- The Pages custom domain is `sjos.ie`. DNS is at Blacknight (email is Titan: keep the MX, SPF TXT and `mail` records). As of Sept 2026 the domain was still delegated to `ns1–4.blacknight.com` (old Squarespace records) while zone edits in Blacknight's DNS Manager only reached `ns1/ns2.blacknightdns.com`; confirm with `dig` against each nameserver before assuming a DNS change is live. After DNS points at GitHub and the certificate is issued, enable "Enforce HTTPS" and re-run the workflow so canonical URLs become `https://sjos.ie/`.
+- The Pages custom domain is `sjos.ie`, served over HTTPS (Let's Encrypt certificate for `sjos.ie` and `www.sjos.ie`, auto-renewed by GitHub) with "Enforce HTTPS" on; `http://` and `www` redirect to `https://sjos.ie/`. DNS is at Blacknight, delegated to `ns1/ns2.blacknightdns.com` and edited in Blacknight's DNS Manager: apex A/AAAA records point at GitHub Pages (`185.199.108–111.153`, `2606:50c0:8000–8003::153`) and `www` is a CNAME to `salilwalavalkar.github.io`. Email is Titan: keep the MX, SPF TXT and `mail` records. If the certificate ever fails to issue or renew, removing and re-adding the custom domain in Settings → Pages makes GitHub request it again.
 
 ## Working agreements
 
