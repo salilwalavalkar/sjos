@@ -326,6 +326,8 @@ html
 	&__link
 		+flex(inline-flex, center, flex-start, nowrap)
 		gap: 6px
+		// at least 24px tall so it's an easy tap target on phones
+		min-height: 24px
 		color: inherit
 		&:hover, &:focus
 			text-decoration: underline

@@ -241,6 +241,9 @@
 			border-top: 1px solid rgba($white, 0.15)
 	&__credit
 		a
+			// at least 24px tall so it's an easy tap target on phones
+			display: inline-block
+			padding: 2px 0
 			color: $mainText
 			&:hover, &:focus
 				text-decoration: underline
